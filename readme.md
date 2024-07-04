@@ -4,12 +4,12 @@ This repository contains a bash script to configure Wi-Fi settings on a Raspberr
 
 ## Features
 
-- Checks if the `wpa_supplicant.conf` file is writable.
-- Makes the file writable if it is not.
-- Prompts the user for country code, SSID, and password.
-- Updates the `wpa_supplicant.conf` file with the provided credentials.
-- Sets the file back to read-only to protect the credentials.
-- Backs up the original configuration file before making changes.
+- Check if the `wpa_supplicant.conf` file is writable.
+- Make the file writable if it is not.
+- Prompt the user for country code, SSID, and password.
+- Update the `wpa_supplicant.conf` file and create a backup on the boot partition.
+- Create a service to apply the configuration on every boot to ensure persistence.
+- Menu-driven interface for easy use.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ This repository contains a bash script to configure Wi-Fi settings on a Raspberr
 
 1. Clone this repository to your Raspberry Pi:
     ```sh
-    git clone https://github.com/6a6ak/wifi-config-script.git
+    git clone https://github.com/6a6ak/Auto_Wifi_RapsberryPi.git
     cd wifi-config-script
     ```
 
@@ -36,9 +36,12 @@ This repository contains a bash script to configure Wi-Fi settings on a Raspberr
     sudo ./configure_wifi.sh
     ```
 
-2. Follow the prompts to enter your country code, SSID, and password.
-
-3. The script will automatically update the `wpa_supplicant.conf` file and set it to read-only.
+2. Follow the prompts to choose an option from the menu:
+    - **1**: Check if the file has write permissions.
+    - **2**: Make the file writable.
+    - **3**: Update Wi-Fi credentials.
+    - **4**: Create a service to apply the configuration on boot.
+    - **0**: Exit the script.
 
 ## Example
 
